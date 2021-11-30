@@ -49,6 +49,8 @@ class RegisterView(APIView):
 class LoginView(APIView):
     '''Verifies Login Credentials of a user and returns id and token of the user'''
 
+    authentication_classes=[]
+    
     def post(self,request,*args,**kwargs):
         email = request.data.get('email',None)
         password = request.data.get('password',None)
